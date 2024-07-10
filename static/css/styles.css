@@ -1,0 +1,83 @@
+form{
+    width:60%;
+    margin:30px auto;
+    background-color: rgb(23, 34, 34);
+    padding:20px  50px;
+    color: white;
+    border-radius: 10px;
+}
+h1,h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+body{
+    background-color: rgb(49, 90, 90);
+}
+
+
+table{
+    width: 80%;
+    margin: 0 auto;
+    /* background-color:rgb(23, 34, 34) ; */
+    color: black;
+    padding: 20px;
+}
+thead{
+    padding: 6em 0;
+}
+tr{
+    text-align: center;
+    padding: 6em 0;
+}
+
+tr:hover{
+    background-color:rgb(23, 34, 34) ;
+    color: white;
+}
+#first{
+    background-color:rgb(46, 83, 83);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: x-large;
+}
+.btn-danger{
+    background-color: rgb(44, 1, 1);
+    border-style: none;
+    margin-bottom: 10px;
+}
+.btn-warning{
+    background-color: rgb(74, 56, 10);
+    border-style: none;
+}
+.btn-danger:hover{
+    background-color: rgb(71, 2, 2);
+}
+.btn-warning:hover{
+    background-color: rgb(82, 64, 17);
+}
+.btn{
+    margin: 2px auto;
+}
+
+.btn-primary{
+    background-color: rgb(15, 20, 20);
+    border-style: none;
+    margin-bottom: 10px;
+}
+.btn-primary:hover{
+    background-color: rgb(34, 48, 48);
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+input{
+    margin:5px auto;
+}
+li{
+    border-style: none;
+}
+
+a:hover{
+    background-color: blue;
+}

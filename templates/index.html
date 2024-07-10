@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+
+<h1>Django To Do Lists</h1>
+
+<div class="container">
+
+  <table >
+    <!-- <h3>Your To Do List</h3> -->
+    <h3><a href="/addItem" class="btn btn-primary" id="AddNew">Add New</a></h3>
+    <thead>
+      <tr id="first">
+        <th scope="col">Title</th>
+        <th scope="col">Detail</th>
+        <th scope="col">ON Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+      
+    </thead>
+
+    <tbody>
+      {% for data in ListData %}
+      <tr>
+        <th>{{data.Title}}</th>
+        <th>{{data.Detail}}</th>
+        <th>{{data.On_Date}}</th>
+        <th>
+          <a href="/edit/{{data.id}}" class="btn btn-warning">Edit</a>
+          <a id="{{data.id}}" class="btn btn-danger shadow-lg" onclick="x({{data.id}})">Delete</a>
+        </th>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<br><br><br>
+
+<div class="container" id="pagination">
+  <ul class="pagination justify-content-center">
+    {% if ListData.has_previous %}
+    <li class="page-item"><a class="page-link bg-secondary mx-auto" href="?page=1">First</a></li>
+    <li class="page-item"><a class="page-link bg-secondary mx-auto" href="?page={{ ListData.previous_page_number }}">Previous</a></li>
+    {% endif %}
+    <li class="page-item"><span class="page-link bg-secondary mx-auto">Page {{ListData.number}} of {{ListData.paginator.num_pages}}</span></li>
+    {% if ListData.has_next %}
+    <li class="page-item"><a class="page-link bg-secondary mx-auto" href="?page={{ ListData.next_page_number }}">Next</a></li>
+    <li class="page-item"><a class="page-link bg-secondary mx-auto" href="?page={{ ListData.paginator.num_pages }}">Last</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+
+<script>
+  function x(id,title) {
+      y = confirm("Are you sure to delete this data "+id)
+      if (y) {
+          document.getElementById(id).href = "/delete/"+id;
+
+      }
+  }
+</script>
+
+
+
+{% endblock body %}
